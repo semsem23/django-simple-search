@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="fr">
+   <head>
+       <meta charset="utf-8">
+       <title>{% block title %}{% endblock %}</title>
+   </head>
+   <body> {% block content %}
+        <div class="card" >
+            <div class="card-body">
+                <h5 class="card-title">{{ jobs.title }}</h5>
+				<p class="card-title"><a href="{{ jobs.company.get_absolute_url }}">{{ jobs.company.name }}</a></p>
+				<p class="card-text">Il y a {{ jobs.published_date|timesince }}</p>
+				<p class="card-text">{{ jobs.description|safe }}</p>
+            </div>
+        </div>  	   
+   </body> {% endblock %}
+</html>

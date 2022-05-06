@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="fr">
+   <head>
+       <meta charset="utf-8">
+       <title>{% block title %}{% endblock %}</title>
+   </head>
+   <body> {% block content %}
+        <div class="card" >
+            <div class="card-body">
+                <h5 class="card-title">{{ comp.name }}</h5>
+                <p class="card-text">{{ comp.infos|safe }}</p>
+				<p class="card-text">{{ comp.activity }}</p>
+				<p class="card-text">{{ comp.headquarters }}</p>
+            </div>
+        </div>   
+   </body> {% endblock %}
+</html>

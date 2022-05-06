@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="fr">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body> {% block content %}
+        <div class="card" >{% for f in jobs %}
+            <div class="card-body">
+                <h5 class="card-title"><a href="{{ f.get_absolute_url }}">{{ f.title }}</a></h5>
+                <p class="card-text">{{ f.company }}</p>
+				<p class="card-text">Il y a {{ f.published_date|timesince }}</p>
+            </div>
+        </div>  {% endfor %}
+   </body> {% endblock %}
+</html>
